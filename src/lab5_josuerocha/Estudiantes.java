@@ -10,14 +10,14 @@ public class Estudiantes {
     private String nombre;
     private String apellido;
     private int edad;
-    private int nc;
+    private String nc;
     private String genero;
-    private String carrera;
+    private Carrera carrera;
 
     public Estudiantes() {
     }
 
-    public Estudiantes(String nombre, String apellido, int edad, int nc, String genero, String carrera) {
+    public Estudiantes(String nombre, String apellido, int edad, String nc, String genero, Carrera carrera) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -50,11 +50,11 @@ public class Estudiantes {
         this.edad = edad;
     }
 
-    public int getNc() {
+    public String getNc() {
         return nc;
     }
 
-    public void setNc(int nc) {
+    public void setNc(String nc) {
         this.nc = nc;
     }
 
@@ -66,11 +66,11 @@ public class Estudiantes {
         this.genero = genero;
     }
 
-    public String getCarrera() {
+    public Carrera getCarrera() {
         return carrera;
     }
 
-    public void setCarrera(String carrera) {
+    public void setCarrera(Carrera carrera) {
         this.carrera = carrera;
     }
 

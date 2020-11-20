@@ -10,7 +10,7 @@ public class Licenciaturas extends Carrera{
     public Licenciaturas() {
     }
 
-    public Licenciaturas(String nombre, String facultad, double mensualidad, String jefe) {
+    public Licenciaturas(String nombre, String facultad, int mensualidad, String jefe) {
         super(nombre, facultad, mensualidad, jefe);
     }
 

@@ -12,7 +12,7 @@ public class Lab5_JosueRocha {
      */
     public static void main(String[] args) {
         
-        
+          Interfaz.main(args);
         
     }
     

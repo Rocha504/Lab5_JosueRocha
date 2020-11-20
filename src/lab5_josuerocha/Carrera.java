@@ -9,13 +9,13 @@ public class Carrera {
     
     private String nombre;
     private String facultad;
-    private double mensualidad;
+    private int mensualidad;
     private String jefe;
 
     public Carrera() {
     }
 
-    public Carrera(String nombre, String facultad, double mensualidad, String jefe) {
+    public Carrera(String nombre, String facultad, int mensualidad, String jefe) {
         this.nombre = nombre;
         this.facultad = facultad;
         this.mensualidad = mensualidad;
@@ -42,7 +42,7 @@ public class Carrera {
         return mensualidad;
     }
 
-    public void setMensualidad(double mensualidad) {
+    public void setMensualidad(int mensualidad) {
         this.mensualidad = mensualidad;
     }
 
@@ -56,7 +56,7 @@ public class Carrera {
 
     @Override
     public String toString() {
-        return "Carrera{" + "nombre=" + nombre + ", facultad=" + facultad + ", mensualidad=" + mensualidad + ", jefe=" + jefe + '}';
+        return nombre;
     }
     
     
