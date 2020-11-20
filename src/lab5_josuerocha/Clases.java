@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ 
 package lab5_josuerocha;
 
 /**
@@ -10,5 +6,13 @@ package lab5_josuerocha;
  * @author josue
  */
 public class Clases {
+    
+    private String nombre;
+    private String seccion;
+    private int edificio;
+    private String salon;
+    private boolean aire;
+    
+    
     
 }

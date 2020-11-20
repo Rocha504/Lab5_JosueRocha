@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ 
 package lab5_josuerocha;
 
 /**
  *
  * @author josue
  */
-public class Ingenierias {
+public class Ingenierias extends Carrera{
+
+    public Ingenierias() {
+    }
+
+    public Ingenierias(String nombre, String facultad, double mensualidad, String jefe) {
+        super(nombre, facultad, mensualidad, jefe);
+    }
+    
+    
     
 }
