@@ -11,14 +11,14 @@ public class Maestros {
     
     private String nombre;
     private String apellido;
-    private double salario;
+    private int salario;
     private int edad;
     private ArrayList <Clases> clases;
 
     public Maestros() {
     }
 
-    public Maestros(String nombre, String apellido, double salario, int edad, ArrayList<Clases> clases) {
+    public Maestros(String nombre, String apellido, int salario, int edad, ArrayList<Clases> clases) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.salario = salario;
@@ -46,7 +46,7 @@ public class Maestros {
         return salario;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(int salario) {
         this.salario = salario;
     }
 

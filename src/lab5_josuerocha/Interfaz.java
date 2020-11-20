@@ -25,11 +25,6 @@ public class Interfaz extends javax.swing.JFrame {
         initComponents();
         
         DefaultComboBoxModel modelo=(DefaultComboBoxModel) carrera_est.getModel();
-      
-        
-    
-        
-        
         DefaultComboBoxModel modelo2=(DefaultComboBoxModel) clases_mast.getModel();
         
        
@@ -49,6 +44,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -70,7 +66,7 @@ public class Interfaz extends javax.swing.JFrame {
         apellidofield_mast = new java.awt.TextField();
         agefield_mast = new java.awt.TextField();
         label1 = new java.awt.Label();
-        salariofield = new java.awt.TextField();
+        salariofield_mast = new java.awt.TextField();
         label2 = new java.awt.Label();
         carrera_est = new javax.swing.JComboBox<>();
         label3 = new java.awt.Label();
@@ -91,8 +87,21 @@ public class Interfaz extends javax.swing.JFrame {
         label4 = new java.awt.Label();
         jefefield_car = new javax.swing.JTextField();
         savebutton_car = new java.awt.Button();
-        jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        label5 = new java.awt.Label();
+        label6 = new java.awt.Label();
+        namefield_class = new java.awt.TextField();
+        label7 = new java.awt.Label();
+        seccionfield_class = new java.awt.TextField();
+        label8 = new java.awt.Label();
+        edificiofield_class = new java.awt.TextField();
+        label9 = new java.awt.Label();
+        salonfield_class = new java.awt.TextField();
+        rb_yes = new javax.swing.JRadioButton();
+        rb_no = new javax.swing.JRadioButton();
+        label10 = new java.awt.Label();
+        savebutton_class = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -181,9 +190,9 @@ public class Interfaz extends javax.swing.JFrame {
         label1.setForeground(new java.awt.Color(51, 51, 51));
         label1.setText("SALARIO");
 
-        salariofield.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        salariofield.setForeground(new java.awt.Color(51, 51, 51));
-        salariofield.setText(" ");
+        salariofield_mast.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        salariofield_mast.setForeground(new java.awt.Color(51, 51, 51));
+        salariofield_mast.setText(" ");
 
         label2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         label2.setText("CLASES");
@@ -206,6 +215,11 @@ public class Interfaz extends javax.swing.JFrame {
         button1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         button1.setForeground(new java.awt.Color(51, 51, 51));
         button1.setLabel("Click para agregar maestro");
+        button1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -235,7 +249,10 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(rb_m)
                                     .addGap(18, 18, 18)
-                                    .addComponent(rb_f))))))
+                                    .addComponent(rb_f)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(savebutton_est, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(108, 108, 108)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -255,7 +272,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(agefield_mast, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(namefield_mast, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(salariofield, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(salariofield_mast, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(clases_mast, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -263,11 +280,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addGap(0, 337, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(savebutton_est, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 239, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,7 +324,7 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addComponent(rb_m)
                                     .addComponent(rb_f)))
                             .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(salariofield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(salariofield_mast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -322,11 +335,11 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGap(17, 17, 17)
                                 .addComponent(clases_mast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(savebutton_est, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                    .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(savebutton_est, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70))
         );
 
         jTabbedPane1.addTab("Agregar Persona", jPanel1);
@@ -335,11 +348,11 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1071, Short.MAX_VALUE)
+            .addGap(0, 973, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
+            .addGap(0, 652, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Lista estudiantes", jPanel2);
@@ -348,11 +361,11 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1071, Short.MAX_VALUE)
+            .addGap(0, 973, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
+            .addGap(0, 652, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Lista Maestros", jPanel3);
@@ -445,7 +458,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(savebutton_car, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(709, Short.MAX_VALUE))
+                .addContainerGap(611, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,54 +485,177 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jefefield_car, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addComponent(savebutton_car, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
         );
 
         jTabbedPane1.addTab("Crear Carreras", jPanel4);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1071, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Lista Clases", jPanel5);
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1071, Short.MAX_VALUE)
+            .addGap(0, 973, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
+            .addGap(0, 652, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Crear Clases", jPanel6);
+        jTabbedPane1.addTab("Lista Clases", jPanel6);
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 0));
+
+        label5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label5.setForeground(new java.awt.Color(51, 51, 51));
+        label5.setText("Llene los siguientes datos para crear una clase:");
+
+        label6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label6.setForeground(new java.awt.Color(51, 51, 51));
+        label6.setText("NOMBRE");
+
+        namefield_class.setText(" ");
+
+        label7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label7.setForeground(new java.awt.Color(51, 51, 51));
+        label7.setText("SECCION");
+
+        seccionfield_class.setText(" ");
+
+        label8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label8.setForeground(new java.awt.Color(51, 51, 51));
+        label8.setText("EDIFICIO");
+
+        edificiofield_class.setForeground(new java.awt.Color(51, 51, 51));
+        edificiofield_class.setText(" ");
+
+        label9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label9.setForeground(new java.awt.Color(51, 51, 51));
+        label9.setText("SALON");
+
+        salonfield_class.setForeground(new java.awt.Color(51, 51, 51));
+        salonfield_class.setText(" ");
+
+        rb_yes.setBackground(new java.awt.Color(255, 255, 0));
+        buttonGroup3.add(rb_yes);
+        rb_yes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rb_yes.setForeground(new java.awt.Color(51, 51, 51));
+        rb_yes.setSelected(true);
+        rb_yes.setText("Si");
+        rb_yes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_yesActionPerformed(evt);
+            }
+        });
+
+        rb_no.setBackground(new java.awt.Color(255, 255, 0));
+        buttonGroup3.add(rb_no);
+        rb_no.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rb_no.setForeground(new java.awt.Color(51, 51, 51));
+        rb_no.setText(" No");
+        rb_no.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_noActionPerformed(evt);
+            }
+        });
+
+        label10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label10.setForeground(new java.awt.Color(51, 51, 51));
+        label10.setText("AIRE ACONDICIONADO?");
+
+        savebutton_class.setBackground(new java.awt.Color(153, 0, 0));
+        savebutton_class.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        savebutton_class.setLabel("Clck para guardar clase");
+        savebutton_class.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                savebutton_classMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(seccionfield_class, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(namefield_class, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(label10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(salonfield_class, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addGap(12, 12, 12)
+                                    .addComponent(edificiofield_class, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(savebutton_class, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rb_yes)
+                    .addComponent(rb_no))
+                .addContainerGap(623, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namefield_class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seccionfield_class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edificiofield_class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(salonfield_class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_yes)
+                .addGap(18, 18, 18)
+                .addComponent(rb_no)
+                .addGap(39, 39, 39)
+                .addComponent(savebutton_class, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Crear Clases", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addGap(78, 78, 78))
         );
 
         pack();
@@ -599,8 +735,73 @@ public class Interfaz extends javax.swing.JFrame {
                 facultad="Ciencias de Salud";
             }
         
+        mensualidad=Integer.parseInt(mensualidadfield_car.getText());
+        jefe=jefefield_car.getText();
+        
+        Carrera c=new Carrera(nombre,facultad,mensualidad,jefe);
+        
+        DefaultComboBoxModel modelo=(DefaultComboBoxModel) carrera_est.getModel();
+        
+        
+        modelo.addElement(c);
+        carrera_est.setModel(modelo);
         
     }//GEN-LAST:event_savebutton_carMouseClicked
+
+    private void button1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button1MouseClicked
+        
+        String nombre;
+        String apellido;
+        int salario;
+        int edad;
+        Clases clase;
+        ArrayList<Clases>imparte = null;
+        
+        nombre=namefield_mast.getText();
+        apellido=apellidofield_mast.getText();
+        salario=Integer.parseInt(salariofield_mast.getText());
+        edad=Integer.parseInt(agefield_mast.getText());
+        clase=(Clases)clases_mast.getSelectedItem();
+        imparte.add(clase);
+        
+        Maestros m=new Maestros(nombre,apellido,salario,edad,imparte);
+        
+    }//GEN-LAST:event_button1MouseClicked
+
+    private void rb_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_noActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_noActionPerformed
+
+    private void rb_yesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_yesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_yesActionPerformed
+
+    private void savebutton_classMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebutton_classMouseClicked
+        String nombre;
+        String seccion;
+        int edificio;
+        String salon;
+        String aire;
+        
+        nombre=namefield_class.getText();
+        seccion=seccionfield_class.getText();
+        edificio=Integer.parseInt(edificiofield_class.getText());
+        salon=salonfield_class.getText();
+        if(rb_yes.isSelected()){
+            aire="Si";
+        }
+        else{
+            aire="No";
+            
+        }
+        Clases c=new Clases(nombre,seccion,edificio,salon,aire);
+        DefaultComboBoxModel modelo2=(DefaultComboBoxModel) clases_mast.getModel();
+        
+        modelo2.addElement(c);
+        clases_mast.setModel(modelo2);
+        
+        
+    }//GEN-LAST:event_savebutton_classMouseClicked
 
     /**
      * @param args the command line arguments
@@ -645,8 +846,10 @@ public class Interfaz extends javax.swing.JFrame {
     private java.awt.Button button1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JComboBox<String> carrera_est;
     private javax.swing.JComboBox<String> clases_mast;
+    private java.awt.TextField edificiofield_class;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -669,11 +872,18 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jefefield_car;
     private java.awt.Label label1;
+    private java.awt.Label label10;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
+    private java.awt.Label label5;
+    private java.awt.Label label6;
+    private java.awt.Label label7;
+    private java.awt.Label label8;
+    private java.awt.Label label9;
     private javax.swing.JTextField mensualidadfield_car;
     private javax.swing.JTextField namefield_car;
+    private java.awt.TextField namefield_class;
     private java.awt.TextField namefield_est;
     private java.awt.TextField namefield_mast;
     private javax.swing.JRadioButton rb_c;
@@ -681,9 +891,14 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_i;
     private javax.swing.JRadioButton rb_l;
     private javax.swing.JRadioButton rb_m;
-    private java.awt.TextField salariofield;
+    private javax.swing.JRadioButton rb_no;
+    private javax.swing.JRadioButton rb_yes;
+    private java.awt.TextField salariofield_mast;
+    private java.awt.TextField salonfield_class;
     private java.awt.Button savebutton_car;
+    private java.awt.Button savebutton_class;
     private java.awt.Button savebutton_est;
+    private java.awt.TextField seccionfield_class;
     // End of variables declaration//GEN-END:variables
 ArrayList <Carrera> carreras;
 ArrayList <Clases> clases;
