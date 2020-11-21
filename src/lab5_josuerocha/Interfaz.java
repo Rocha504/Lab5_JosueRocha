@@ -412,6 +412,10 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(list_est);
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Carrera");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Estudiante");
+        treeNode1.add(treeNode2);
+        tree_est.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(tree_est);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
