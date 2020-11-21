@@ -10,6 +10,8 @@ import javax.swing.DefaultComboBoxModel;
 import java.util.Random;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -55,6 +57,7 @@ public class Interfaz extends javax.swing.JFrame {
         popup_est = new javax.swing.JPopupMenu();
         eliminar2 = new javax.swing.JMenuItem();
         modificar2 = new javax.swing.JMenuItem();
+        agregar = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -86,7 +89,7 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         list_est = new javax.swing.JList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        tree_est = new javax.swing.JTree();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         list_mast = new javax.swing.JList<>();
@@ -141,8 +144,18 @@ public class Interfaz extends javax.swing.JFrame {
         popup_class.add(eliminar1);
 
         eliminar2.setText("jMenuItem1");
+        popup_est.add(eliminar2);
 
         modificar2.setText("jMenuItem2");
+        popup_est.add(modificar2);
+
+        agregar.setText("Agregar arbol");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarActionPerformed(evt);
+            }
+        });
+        popup_est.add(agregar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -360,10 +373,10 @@ public class Interfaz extends javax.swing.JFrame {
                                             .addComponent(jLabel4)
                                             .addComponent(jLabel9)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                                         .addComponent(agefield_est, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel5)
@@ -382,7 +395,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGap(17, 17, 17)
                                 .addComponent(clases_mast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(savebutton_est, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -399,7 +412,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(list_est);
 
-        jScrollPane1.setViewportView(jTree1);
+        jScrollPane1.setViewportView(tree_est);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -983,13 +996,64 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_list_classMouseClicked
 
     private void list_estMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_list_estMouseClicked
-        if(list_class.getSelectedIndex()>=0){
+        if(list_est.getSelectedIndex()>=0){
             if(evt.isMetaDown()){
-                popup_class.show(evt.getComponent(),evt.getX(),evt.getY());
+                popup_est.show(evt.getComponent(),evt.getX(),evt.getY());
             }
         
     }               
     }//GEN-LAST:event_list_estMouseClicked
+
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+        DefaultTreeModel m=(DefaultTreeModel) tree_est.getModel();
+        DefaultMutableTreeNode raiz=(DefaultMutableTreeNode) m.getRoot();
+        
+        String nombre;
+        int edad;
+        String genero;
+        String apellido;
+        String nc;
+        int n1,n2,n3,n4,n5,n6,n7,n8;
+        Carrera carrera;
+        DefaultListModel modelo=(DefaultListModel) list_est.getModel();
+        
+            nombre=namefield_est.getText();
+            edad=Integer.parseInt(agefield_est.getText());
+            if(rb_m.isSelected()){
+                genero="Masculino";
+            }
+            else{
+                genero="Femenino";
+            }
+            apellido=apellidofield_est.getText();
+            carrera=(Carrera)carrera_est.getSelectedItem();
+            n1=1+ran.nextInt(10);
+            n2=1+ran.nextInt(10);
+            n3=1+ran.nextInt(10);
+            n4=1+ran.nextInt(10);
+            n5=1+ran.nextInt(10);
+            n6=1+ran.nextInt(10);
+            n7=1+ran.nextInt(10);
+            n8=1+ran.nextInt(10);
+
+            nc=n1+""+n2+""+n3+""+n4+""+n5+""+n6+""+n7+""+n8;
+
+            
+            Estudiantes x=new Estudiantes(nombre,apellido,edad,nc,genero,carrera);
+      
+            JOptionPane.showMessageDialog(this,"Estudiante agregado exitosamente");
+
+        
+        DefaultMutableTreeNode nodo_estudiante;
+        nodo_estudiante=new DefaultMutableTreeNode(new Estudiantes(nombre,apellido,edad,nc,genero,carrera));
+        DefaultMutableTreeNode carrer;
+        carrer=new DefaultMutableTreeNode(carrera);
+        carrer.add(nodo_estudiante);
+        raiz.add(carrer);
+        m.reload();
+        
+        
+    }//GEN-LAST:event_agregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1029,6 +1093,7 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.TextField agefield_est;
     private java.awt.TextField agefield_mast;
+    private javax.swing.JMenuItem agregar;
     private java.awt.TextField apellidofield_est;
     private java.awt.TextField apellidofield_mast;
     private java.awt.Button button1;
@@ -1065,7 +1130,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTree jTree1;
     private javax.swing.JTextField jefefield_car;
     private java.awt.Label label1;
     private java.awt.Label label10;
@@ -1106,6 +1170,7 @@ public class Interfaz extends javax.swing.JFrame {
     private java.awt.Button savebutton_class;
     private java.awt.Button savebutton_est;
     private java.awt.TextField seccionfield_class;
+    private javax.swing.JTree tree_est;
     // End of variables declaration//GEN-END:variables
 ArrayList <Carrera> carreras;
 ArrayList <Clases> clases;
