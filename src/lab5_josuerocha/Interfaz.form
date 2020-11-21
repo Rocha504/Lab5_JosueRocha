@@ -55,12 +55,12 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="eliminar2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="modificar2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem2"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="agregar">

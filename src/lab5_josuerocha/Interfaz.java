@@ -143,10 +143,10 @@ public class Interfaz extends javax.swing.JFrame {
         eliminar1.setText("Eliminar");
         popup_class.add(eliminar1);
 
-        eliminar2.setText("jMenuItem1");
+        eliminar2.setText("Eliminar");
         popup_est.add(eliminar2);
 
-        modificar2.setText("jMenuItem2");
+        modificar2.setText("Modificar");
         popup_est.add(modificar2);
 
         agregar.setText("Agregar arbol");
