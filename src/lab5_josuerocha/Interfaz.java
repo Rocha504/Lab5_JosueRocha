@@ -1165,6 +1165,9 @@ public class Interfaz extends javax.swing.JFrame {
         modelo.addElement(c);
         carrera_est.setModel(modelo);
         JOptionPane.showMessageDialog(this,"Carrera creada correctamente");
+        namefield_car.setText("");
+        mensualidadfield_car.setText("");
+        jefefield_car.setText("");
         }
         catch(Exception e){
             System.out.println("Ocurrio un error.");
