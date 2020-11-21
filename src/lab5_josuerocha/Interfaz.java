@@ -46,6 +46,15 @@ public class Interfaz extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        popup_mast = new javax.swing.JPopupMenu();
+        eliminar = new javax.swing.JMenuItem();
+        modificar = new javax.swing.JMenuItem();
+        popup_class = new javax.swing.JPopupMenu();
+        modificar1 = new javax.swing.JMenuItem();
+        eliminar1 = new javax.swing.JMenuItem();
+        popup_est = new javax.swing.JPopupMenu();
+        eliminar2 = new javax.swing.JMenuItem();
+        modificar2 = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -79,6 +88,9 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        list_mast = new javax.swing.JList<>();
+        label11 = new java.awt.Label();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -93,6 +105,9 @@ public class Interfaz extends javax.swing.JFrame {
         jefefield_car = new javax.swing.JTextField();
         savebutton_car = new java.awt.Button();
         jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        list_class = new javax.swing.JList<>();
+        label12 = new java.awt.Label();
         jPanel5 = new javax.swing.JPanel();
         label5 = new java.awt.Label();
         label6 = new java.awt.Label();
@@ -107,6 +122,27 @@ public class Interfaz extends javax.swing.JFrame {
         rb_no = new javax.swing.JRadioButton();
         label10 = new java.awt.Label();
         savebutton_class = new java.awt.Button();
+
+        eliminar.setText("Eliminar");
+        popup_mast.add(eliminar);
+
+        modificar.setText("Modificar");
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
+        popup_mast.add(modificar);
+
+        modificar1.setText("Modificar");
+        popup_class.add(modificar1);
+
+        eliminar1.setText("Eliminar");
+        popup_class.add(eliminar1);
+
+        eliminar2.setText("jMenuItem1");
+
+        modificar2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -324,7 +360,7 @@ public class Interfaz extends javax.swing.JFrame {
                                             .addComponent(jLabel4)
                                             .addComponent(jLabel9)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                         .addComponent(agefield_est, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)))
@@ -346,7 +382,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGap(17, 17, 17)
                                 .addComponent(clases_mast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(savebutton_est, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -356,6 +392,11 @@ public class Interfaz extends javax.swing.JFrame {
         jTabbedPane1.addTab("Agregar Persona", jPanel1);
 
         list_est.setModel(new DefaultListModel());
+        list_est.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                list_estMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(list_est);
 
         jScrollPane1.setViewportView(jTree1);
@@ -374,7 +415,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
@@ -383,15 +424,43 @@ public class Interfaz extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Lista estudiantes", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(153, 51, 255));
+
+        list_mast.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        list_mast.setModel(new DefaultListModel());
+        list_mast.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                list_mastMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(list_mast);
+
+        label11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label11.setForeground(new java.awt.Color(51, 51, 51));
+        label11.setText("LISTA DE MAESTROS");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 973, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(352, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 652, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         jTabbedPane1.addTab("Lista Maestros", jPanel3);
@@ -511,22 +580,48 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jefefield_car, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(savebutton_car, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
         );
 
         jTabbedPane1.addTab("Crear Carreras", jPanel4);
 
+        jPanel6.setBackground(new java.awt.Color(204, 204, 0));
+
+        list_class.setModel(new DefaultListModel());
+        list_class.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                list_classMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(list_class);
+
+        label12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label12.setText("LISTA DE CLASES");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 973, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(391, 391, 391)
+                        .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(324, 324, 324)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(400, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 652, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109))
         );
 
         jTabbedPane1.addTab("Lista Clases", jPanel6);
@@ -631,7 +726,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(savebutton_class, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rb_yes)
                     .addComponent(rb_no))
-                .addContainerGap(623, Short.MAX_VALUE))
+                .addContainerGap(632, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -660,7 +755,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(rb_yes)
                 .addGap(18, 18, 18)
                 .addComponent(rb_no)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(savebutton_class, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -671,17 +766,17 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -756,6 +851,7 @@ public class Interfaz extends javax.swing.JFrame {
         int mensualidad;
         String jefe;
         
+        try{
         nombre=namefield_car.getText();
         if(rb_l.isSelected()){
             facultad="Licenciatura";
@@ -778,6 +874,14 @@ public class Interfaz extends javax.swing.JFrame {
         
         modelo.addElement(c);
         carrera_est.setModel(modelo);
+        }
+        catch(Exception e){
+            System.out.println("Ocurrio un error.");
+            System.out.println("Tips para prevenir errores: ");
+            System.out.println("Asegurese de no tener ningun espacio en la edad y dano del arma");
+            System.out.println("Llene todos los campos.");
+            System.out.println("Presione guardar hasta que todos los cambos esten llenos");
+        }
         
     }//GEN-LAST:event_savebutton_carMouseClicked
 
@@ -788,16 +892,26 @@ public class Interfaz extends javax.swing.JFrame {
         int salario;
         int edad;
         Clases clase;
+        try{
         ArrayList<Clases>imparte = null;
+       DefaultListModel modelo=(DefaultListModel) list_mast.getModel();
         
         nombre=namefield_mast.getText();
         apellido=apellidofield_mast.getText();
         salario=Integer.parseInt(salariofield_mast.getText());
         edad=Integer.parseInt(agefield_mast.getText());
         clase=(Clases)clases_mast.getSelectedItem();
-        imparte.add(clase);
         
         Maestros m=new Maestros(nombre,apellido,salario,edad,imparte);
+        modelo.addElement(m);}
+        catch (Exception e){
+            System.out.println("Ocurrio un error.");
+            System.out.println("Tips para prevenir errores: ");
+            System.out.println("Asegurese de no tener ningun espacio en la edad y dano del arma");
+            System.out.println("Llene todos los campos.");
+            System.out.println("Presione guardar hasta que todos los cambos esten llenos");
+
+        }
         
     }//GEN-LAST:event_button1MouseClicked
 
@@ -816,6 +930,7 @@ public class Interfaz extends javax.swing.JFrame {
         String salon;
         String aire;
         
+        try{
         nombre=namefield_class.getText();
         seccion=seccionfield_class.getText();
         edificio=Integer.parseInt(edificiofield_class.getText());
@@ -829,12 +944,52 @@ public class Interfaz extends javax.swing.JFrame {
         }
         Clases c=new Clases(nombre,seccion,edificio,salon,aire);
         DefaultComboBoxModel modelo2=(DefaultComboBoxModel) clases_mast.getModel();
-        
+        DefaultListModel modelo3=(DefaultListModel) list_class.getModel();
         modelo2.addElement(c);
         clases_mast.setModel(modelo2);
+        modelo3.addElement(c);
+        list_class.setModel(modelo3);}
+        catch(Exception e){
+             System.out.println("Ocurrio un error.");
+             System.out.println("Tips para prevenir errores: ");
+             System.out.println("Asegurese de no tener ningun espacio en la edad y dano del arma");
+             System.out.println("Llene todos los campos.");
+             System.out.println("Presione guardar hasta que todos los cambos esten llenos");
+
+        }
         
         
     }//GEN-LAST:event_savebutton_classMouseClicked
+
+    private void list_mastMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_list_mastMouseClicked
+        if(list_mast.getSelectedIndex()>=0){
+            if(evt.isMetaDown()){
+                popup_mast.show(evt.getComponent(),evt.getX(),evt.getY());
+            }
+        }
+    }//GEN-LAST:event_list_mastMouseClicked
+
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+        
+    }//GEN-LAST:event_modificarActionPerformed
+
+    private void list_classMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_list_classMouseClicked
+        if(list_class.getSelectedIndex()>=0){
+            if(evt.isMetaDown()){
+                popup_class.show(evt.getComponent(),evt.getX(),evt.getY());
+            }
+        }
+                   
+    }//GEN-LAST:event_list_classMouseClicked
+
+    private void list_estMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_list_estMouseClicked
+        if(list_class.getSelectedIndex()>=0){
+            if(evt.isMetaDown()){
+                popup_class.show(evt.getComponent(),evt.getX(),evt.getY());
+            }
+        
+    }               
+    }//GEN-LAST:event_list_estMouseClicked
 
     /**
      * @param args the command line arguments
@@ -883,6 +1038,9 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> carrera_est;
     private javax.swing.JComboBox<String> clases_mast;
     private java.awt.TextField edificiofield_class;
+    private javax.swing.JMenuItem eliminar;
+    private javax.swing.JMenuItem eliminar1;
+    private javax.swing.JMenuItem eliminar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -904,11 +1062,15 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTree jTree1;
     private javax.swing.JTextField jefefield_car;
     private java.awt.Label label1;
     private java.awt.Label label10;
+    private java.awt.Label label11;
+    private java.awt.Label label12;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
@@ -917,12 +1079,20 @@ public class Interfaz extends javax.swing.JFrame {
     private java.awt.Label label7;
     private java.awt.Label label8;
     private java.awt.Label label9;
+    private javax.swing.JList<String> list_class;
     private javax.swing.JList<String> list_est;
+    private javax.swing.JList<String> list_mast;
     private javax.swing.JTextField mensualidadfield_car;
+    private javax.swing.JMenuItem modificar;
+    private javax.swing.JMenuItem modificar1;
+    private javax.swing.JMenuItem modificar2;
     private javax.swing.JTextField namefield_car;
     private java.awt.TextField namefield_class;
     private java.awt.TextField namefield_est;
     private java.awt.TextField namefield_mast;
+    private javax.swing.JPopupMenu popup_class;
+    private javax.swing.JPopupMenu popup_est;
+    private javax.swing.JPopupMenu popup_mast;
     private javax.swing.JRadioButton rb_c;
     private javax.swing.JRadioButton rb_f;
     private javax.swing.JRadioButton rb_i;
